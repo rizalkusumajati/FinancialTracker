@@ -1,8 +1,8 @@
 package com.riztech.financialtracker.presentation.home
 
+import com.airbnb.mvrx.MavericksViewModel
 import com.airbnb.mvrx.MavericksViewModelFactory
 import com.airbnb.mvrx.ViewModelContext
-import com.riztech.financialtracker.MvRxViewModel
 import com.riztech.financialtracker.domain.interactor.HomeInteractor
 import kotlinx.coroutines.CoroutineDispatcher
 import org.koin.android.ext.android.inject
@@ -11,7 +11,7 @@ class HomeViewModel(
     val initialState: HomeState,
     val homeInteractor: HomeInteractor,
     val dispatcher: CoroutineDispatcher
-): MvRxViewModel<HomeState>(initialState) {
+): MavericksViewModel<HomeState>(initialState) {
 
     companion object: MavericksViewModelFactory<HomeViewModel, HomeState> {
         override fun create(viewModelContext: ViewModelContext, state: HomeState): HomeViewModel? {

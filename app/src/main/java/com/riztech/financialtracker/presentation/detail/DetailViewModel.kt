@@ -1,8 +1,8 @@
 package com.riztech.financialtracker.presentation.detail
 
+import com.airbnb.mvrx.MavericksViewModel
 import com.airbnb.mvrx.MavericksViewModelFactory
 import com.airbnb.mvrx.ViewModelContext
-import com.riztech.financialtracker.MvRxViewModel
 import com.riztech.financialtracker.domain.interactor.DetailInteractor
 import com.riztech.financialtracker.domain.model.Movie
 import kotlinx.coroutines.CoroutineDispatcher
@@ -12,7 +12,7 @@ class DetailViewModel(
     val initialState: DetailState,
     val detailInteractor: DetailInteractor,
     val dispatcher: CoroutineDispatcher
-):MvRxViewModel<DetailState>(initialState)  {
+): MavericksViewModel<DetailState>(initialState)  {
 
     companion object: MavericksViewModelFactory<DetailViewModel, DetailState>{
         override fun create(
